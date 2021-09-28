@@ -119,5 +119,27 @@
 
          
 
+      10. config 
       
+          vim은 작업하기 어려우므로 visual studio code로 변경하는 작업을 해줘야 한다
+      
+          git config --global core.editor "code --wait"
+      
+          vim 탈출 코드: ese : w q (차례대로 누르기)
+      
+          
+      
+      11. git 에서 관리할 필요없는 파일은 gitignore로 무시처리 
+      
+          https://gitignore.io/
+      
+          여기서 windows 엔터, eclipse 엔터, java 엔터
+      
+          눌러서  해당하는 운영체제, 프로그래밍 작업도구, 언어 선택 후 
+      
+          나열된 보기를 적용 
+      
+      12. git push origin master 해서 에러 발생할 경우 (충돌 발생할 경우)
+      
+          pull로 복구 후 다시 작업 
 
