@@ -41,7 +41,7 @@
 #### 경고창 
 
 - `<script>
-  	alert("^^");
+  	alert("^^"); 
   </script>`
 
 
@@ -184,7 +184,27 @@ poster="http://placehold.it/640X360
 
 
 
+<body>
 
+`<form action="servlet_name" method="get">
+	<input type="hidden" name="sign" value="memberInsert" >
+	name <input name="name"> <br>
+	id <input name="id"> <br>
+	pw <input type="password" name="pw"> <br>
+	사진 <input type="file" name="file"> <br>
+	분야 java <input type="checkbox" name="language" value="java"> 
+		c <input type="checkbox" name="language" value="c">
+		python <input type="checkbox" name="language" value="python"><br>`
+
+
+		성별 여<input type="radio" name="gender" value="여"> 
+		    남<input type="radio" name="gender" value="남"> <br>
+	<input type="submit" value="회원가입">
+	<input type="button" value="경고" onclick="alert('잘되나요?')">
+	<input type="reset" value="reset">
+	<input type="image" src="game.png" width="300" name="img">
+  </form>
+</body>
 
 
 
