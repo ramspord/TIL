@@ -44,6 +44,10 @@ SELECT * FROM member;  //여기는 전체 출력
 
 
 
+외래키 지정 
+
+
+
 
 
 
