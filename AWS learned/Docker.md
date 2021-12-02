@@ -324,6 +324,84 @@ sudo docker run -p 8090:8090 -v /etc/localtime:/etc/localtime:ro -e TZ=Asia/Seou
 
 - sudo docker start tom_tomcat 
 
+  홈페이지 접속법은 (내 아이피:포트/폴더  ex: 13.134.18.274:8080/openeg)
+
+
+
+#### WAR 파일 압축법 
+
+
+
+스프링부트에 들어가서 해당 프로젝트 오른쪽 클릭 export - war file - export source file (선택)후 시작 
+
+배포할땐 소스코드 추가 안함 
+
+연습할땐 함 
+
+
+
+
+
+동기화 방법 
+
+ sudo docker run -d --name tom_tomcat -p 8080:8080 -v ~/0jes/tomcat_data:/usr/local/tomcat/webapps javanism/openeg:1
+
+
+
+
+
+run as maven build ... 해서 war 파일이 생성되면 
+
+프로젝트 위치로 옮기고 
+
+new - file 해서 Dockerfile 를 하나 만들어서 똑같이 프로젝트 위치로 옮긴다 
+
+그리고 도커 파일의 ARG Jar_File  ./ 뒤에 부분을 war 파일 이름으로 바꾼다 test-0.0.1-snapshot.war  이런식으로 
+
+그리고 프로젝트 우클릭 
+
+team - share 누르고 
+
+Git staging 에서 불필요한 파일 다 지우고 ++ 버튼을 눌러서 staged changes 로 옮겨준다 
+
+approproperties 와 같은 파일을 지워야 해킹을 안 당한다 
+
+그리고 
+
+생성되는 창에서 
+
+깃헙 프로젝트 주소를 집어넣으면 된다 
+
+
+
+내 프로젝트 war파일 깃허브에 업로드 후 모바엑스텀으로 받아오는 법 \
+
+- sudo docker ps 
+
+- cd 0jes/git_registry 
+
+- ls
+
+- git clone 깃허브 프로젝트 주소 
+
+- ls (프로젝트 폴더 잘 다운받아졌는지 확인)
+
+- cd AI3 (들어가서  war파일  잘 들어왔는지 확인)
+
+- ls (하면 AI3 폴더에 도커파일이랑 war파일이 잘 들어와 있는 것을 확인할 수 있다)
+
+- sudo docker build -t ramspor/test . 
+
+- sudo docker images 
+
+  (하면 레파지토리에 ramspo/test 파일과 openjdk가 잘 들어와 있는 것을 확인할 수 있다)
+
+- cd ~
+
+- sudo docker run -p 8090:8080 -d --name 이니셜_tomcat ramspo/test:latest 
+
+- sudo docker ps (하면 hsc_tomcat이 잘 풀려져 있는 것을 확인할 수 있다.)
+
 
 
 
