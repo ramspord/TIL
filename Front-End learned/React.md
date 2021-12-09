@@ -6,4 +6,38 @@
 
 - 작업시 모든 자료를 새로 받아오는 특성이 있다. 
 
-  
+
+
+
+npx create react app test2 (test2란 폴더 생성)
+
+cd test2 
+
+npm start  (하면 자동으로 실행되면서 로컬호스트 3000번 웹페이지가 나타난다)
+
+
+
+return `<h3>I Love Potato</h3>`  이 태그가 jsx
+
+
+
+expression language EL 표현언어
+
+jsp ${}
+
+mybatis #{}
+
+react {}
+
+
+
+배열
+
+결과로 받고 싶으면 map()
+
+그렇지 않으면 foreach()
+
+</> 리액트 전용 문법
+
+=> 화살표함수 
+
