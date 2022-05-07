@@ -84,6 +84,173 @@
 
    
 
-   
+   3. JSON 배열  -- 대괄호 [] 사용 
 
-   
+      "person" : [
+
+      ​	{"name" : "홍길동","age" : 20, "nationality":"한국"}.
+
+      ​	{"name" : "데이빗","age" : 30, "nationality":"미국"},
+
+      ​	{"name" : "사쿠라","age" : 40, "nationality":"일본"}
+
+      ]
+
+
+
+#### JSON 데이터를 다루기 위한 JS 기본 사용법
+
+[1]
+
+const person = [
+
+​	{"name" : "홍길동","age" : 20, "nationality":"한국"},
+
+​	{"name" : "데이빗","age" : 30, "nationality":"미국"},
+
+​	{"name" : "사쿠라","age" : 40, "nationality":"일본"},
+
+​	{"name" : "뿌빠뽕","age" : 50, "nationality":"태국"}
+
+];
+
+
+
+console.log (typeof person); //object
+
+'  ' 를 붙히면 String으로 나온다 (개발자도구에서)
+
+
+
+[2] 출력 
+
+console.log (person[0].name + "" + person[0].age + "" + person[0].nationality);
+
+
+
+[3] 반복 
+
+console.log (...person); //전개 연산자 (모든 요소들이 다 출력된다)
+
+console.log ([...person] [0].name); //홍길동 (특정 요소만 추출하고 싶을때)
+
+console.log ([...person].length); //4  (객체가 몇개인지)
+
+
+
+[4] 반복 가능한 객체 
+
+###### for...of
+
+for (let ele of person) {       // person -- iterable 반복 가능한 객체만 와야 함. 값이 출력됨
+
+​	console.log(ele); 
+
+}
+
+
+
+###### for...in 
+
+for (let i in person) {       // 배열 0 1 2 3
+
+​	console.log(i); 
+
+}
+
+
+
+for (let k in person) {       // name,age,nationality  key 값이 출력됨
+
+​	console.log(k); 
+
+}
+
+
+
+[5] 수정
+
+person[0].name = "홍길자";
+
+person[0].age = 22;
+
+console.log
+
+```
+(` 홍길동의 이름이 ${person[0].name}로 수정되었고, 나이는 ${person[0].age}살로 수정되었습니다. `);
+```
+
+역따옴표로 감싸면 됨 위 문장을 
+
+
+
+### 중첩된 JSON 데이터 다루기 
+
+const book = {
+
+​	"isbn":"123-456-789",
+
+​	"author":{
+
+​		"name":"홍길동"
+
+​		"email":"hong@gmail.com"
+
+​	},
+
+"editor":{
+
+​		"name":"이순재"
+
+​		"email":"lee@gmail.com"
+
+​	},
+
+"title":"대한민국의 정의는 죽었는가?",
+
+"category":[
+
+​	"Non-Fiction","IT","politics"
+
+​	]
+
+}
+
+
+
+console.log(book["author"].name); //홍길동
+
+console.log(book["editor"].name);  //이순신
+
+
+
+console.log(book.isbn);   //123-456-789
+
+console.log(book.title);     //.연산자 방식
+
+=
+
+console.log(book["title"]); 
+
+
+
+#### 개별 엑세스 
+
+let val = " ";
+
+val =book.category[0];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
