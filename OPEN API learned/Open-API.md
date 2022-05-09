@@ -176,7 +176,7 @@ person[0].age = 22;
 
 console.log
 
-```
+```json
 (` 홍길동의 이름이 ${person[0].name}로 수정되었고, 나이는 ${person[0].age}살로 수정되었습니다. `);
 ```
 
@@ -240,7 +240,108 @@ let val = " ";
 
 val =book.category[0];
 
-다음
+document.getElementById("aaa").innerText=val;
+
+
+
+//반복문을 이용한 엑세스 
+
+//for 
+
+```json
+for (let i=0; i<book.category.lenth; i++){
+
+	val +=book.category[i] + "<br>";
+
+}
+document.getElementById("aaa").innerHTML=val;
+```
+
+
+
+```
+for..in 
+for(let i in book.category){
+	val +=book.category[i] + "<br>";
+}
+
+//
+for..of
+for(let value of book.category){
+	val+=value+"<br>";
+}
+document.getElementById("aaa").innerHTML=val;
+```
+
+
+
+#### JSON 데이터 객체와 문자열로 변환하기
+
+JSON.parse()  객체로 변환 
+
+JSON.stringify() 문자열로 변환 
+
+
+
+[1] : JSON.parse(jsonText) -- JSON 형식의 텍스트를 자바스크립트 객체로 변환 
+
+
+
+```
+let jsonText = `{"name" : "홍길동","age" : 20, "nationality":"한국"}`;
+따옴표가 들어가 있으면 텍스트 
+```
+
+console.log ( typeof jsonText); //string
+
+
+
+```
+let jsonText = {"name" : "홍길동","age" : 20, "nationality":"한국"};
+따옴표가 빠지면 객체 
+```
+
+console.log(jsonText.name); //object
+
+
+
+const jsonObj = ISON.parse(jsonText);
+
+jsonText가 JSON.parse 메서드를 통해 jsonObj 객체로 변환되는 과정 
+
+console.log(jsonObj.name + " " +jsonObj.age + " " +jsonObj.nationality);  //
+
+
+
+const jsonStr=JSON.stringify(jsonObj);
+
+console.log(jsonStr);
+
+
+
+#### JSON 데이터를 웹페이지로 출력하기 
+
+Parsing -- 다른 형식으로 저장된 데이터를 목적에 맞는 형태의 형식으로 변환하는 것 
+
+JSON Parsing -- JSON 형식의 텍스트 문자열을 목적에 맞게 객체로 변환. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
