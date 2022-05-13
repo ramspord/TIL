@@ -76,3 +76,151 @@ catch(Exception e) {
 
 ```
 
+-----------
+
+
+
+### JSON 데이터 웹페이지 테이블로 출력하기 
+
+- JSON
+
+```json
+[
+
+​	{
+
+​			"id" : 1,
+
+​			"name" : "홍길동",
+
+​			"age" : 20,
+
+​			"address" : "경기도 부천시 소사본동",
+
+​			"gender" : "Male",
+
+​			"job" : "Developer",
+
+​			"hobby" : "soccer"
+
+​	},
+
+​	{
+
+​			"id" : 2,
+
+​			"name" : "이윤식",
+
+​			"age" : 24,
+
+​			"address" : "서울특별시 서초구 서초동",
+
+​			"gender" : "FeMale",
+
+​			"job" : "Developer",
+
+​			"hobby" : "basketball"
+
+​	}
+
+]
+
+
+```
+
+
+
+- HTML
+
+```
+<table class="table table-bordered" id="member_table">
+	<thead>
+		<tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Job</th>
+            <th>Hobby</th>
+		</tr>
+	</thead>
+	<tbody>
+			
+	// 제이쿼리를 통해서 JSON 값들이 자동으로 tbody에 삽입된다. 
+	</tbody>
+
+
+</table>
+```
+
+- table  테이블 형식 
+- table-bordered 테이블 선 만들어주는거 css
+
+
+
+- jQuery
+
+```
+$(document).ready(function(){
+
+	$getJSON("exam_001.json", function(data){
+	
+	//할일 처리 
+	let member_data = "";
+	$.each(data, function(key,value){
+	console.log(key, value);  
+	
+	member_data +="<tr>";
+	member_data +="<td>" + value.id + "</td>";
+	member_data +="<td>" + value.name + "</td>";
+	member_data +="<td>" + value.age + "</td>";
+	member_data +="<td>" + value.address + "</td>";
+	member_data +="<td>" + value.gender + "</td>";
+	member_data +="<td>" + value.job + "</td>";
+	member_data +="<td>" + value.hobby + "</td>";
+	member_data +="</tr>";
+	
+		});
+		$("#member_table").append(member_data)
+		
+	});
+});
+```
+
+console.log(key, value);  
+
+key 는 배열의 순번 0,1,2,3,4,5,6,7
+
+value는 배열 속 객체 id, name,job 등등 
+
+
+
+- ctrl + q  주석처리 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
